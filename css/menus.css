@@ -96,33 +96,40 @@ body, html {
 }
 
 /*page menu coeur*/
-.plein__heart {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  margin: 10px;
-}
-
-.far {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 1;
-}
-
-.plein {
-  z-index: 1;
-  opacity: 0;
-  background-image: linear-gradient(#FF79DA, #9356DC);
+.full {
+  color: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+  cursor: pointer;
   background-clip: text;
+  opacity: 0;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
   -webkit-background-clip: text;
 }
 
-.plein__heart:hover .plein {
+.heart > .like {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 25px;
+  transform: translateY(-5px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 35px;
+  right: 35px;
+}
+
+.heart:hover .full {
   opacity: 1;
-  transition: 3ms;
+  transform: translateY(-5px) scale(1.1);
+}
+
+.parent {
+  position: absolute;
 }
 
 .menu__header {
