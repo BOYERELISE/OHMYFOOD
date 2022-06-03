@@ -243,6 +243,8 @@ body, html {
 .margin__off {
   margin-bottom: 0px;
   padding-left: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .margin__off2 {
