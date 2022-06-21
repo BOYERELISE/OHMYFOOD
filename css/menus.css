@@ -87,6 +87,9 @@ body, html {
 .header__arrow {
   margin-left: 20px;
   color: #000;
+  position: absolute;
+  top: 20px;
+  left: 1px;
 }
 
 .retour {
@@ -134,8 +137,9 @@ body, html {
 
 .menu__header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .main__menu {
@@ -147,12 +151,24 @@ body, html {
   border-radius: 40px;
 }
 
+@keyframes coche {
+  from {
+    width: 20%;
+  }
+  to {
+    width: 0%;
+  }
+}
 .repas:hover > .repas__select {
-  background-color: #99E2D0;
+  animation-name: coche;
   width: 20%;
+  background-color: #99E2D0;
   -moz-transition: width 1s;
   -webkit-transition: width 1s;
   transition: width 1s;
+  -webkit-animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
 }
 
 .repas:hover > .repas__title {
@@ -163,6 +179,34 @@ body, html {
 .repas:hover > .repas__select .fas {
   transform: rotate(-360deg);
   transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
+}
+
+@keyframes exemple {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.delais1 {
+  animation-name: transition;
+  animation-duration: 1s;
+}
+
+.delais2 {
+  animation-name: transition;
+  animation-duration: 1.5s;
+}
+
+.delais3 {
+  animation-name: transition;
+  animation-duration: 2s;
+}
+
+.delais4 {
+  animation-name: transition;
+  animation-duration: 2.5s;
 }
 
 .header__img img {
@@ -200,7 +244,6 @@ body, html {
   overflow: hidden;
   transition: padding-right 450ms ease-in-out;
   display: flex;
-  animation: transition 3s;
 }
 
 @keyframes transition {
@@ -210,7 +253,7 @@ body, html {
   }
   to {
     transform: translateY(0%);
-    opacity: 100%;
+    opacity: 1;
   }
 }
 .repas__title {
@@ -296,6 +339,12 @@ body, html {
   margin-bottom: 30px;
 }
 
+.btn__order button:hover {
+  background-color: #ae80e5;
+  background-blend-mode: lighten;
+  box-shadow: 4px 4px 6px #000;
+}
+
 .block__footer {
   padding: 0;
   margin: 0;
@@ -361,15 +410,14 @@ footer ul .fa-hands-helping {
 @media (min-width: 1023px) {
   .menu__header {
     display: flex;
-    align-items: center;
-    padding-right: 40%;
+    width: 100%;
+    justify-content: center;
   }
 
   .Logohaut1 {
     width: 60%;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 60%;
   }
 
   .header__img img {
