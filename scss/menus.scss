@@ -155,37 +155,31 @@ position:absolute;
 }
 
 @keyframes coche {
-  from {width: 20%;}
-  to {width: 0%;}
+  from {margin-right: -20%;}
+  to {margin-right: 0%;}
 }
-
 
 .repas:hover > .repas__select {
+  width: 20%;
 animation-name: coche;
-width: 20%;
 background-color: #99E2D0;
--moz-transition: width 1s; // Mozzilla
- -webkit-transition: width 1s; // Webkit
- transition: width 1s; // W3C
- -webkit-animation-duration: 3s;
  animation-fill-mode: forwards;
- animation-delay: 1s;
+ animation-delay: 0.25s;
 }
-.repas:hover > .repas__title {
 
+.repas:hover > .repas__title {
   width: 60%;
   background-color: white;
   }
 
 .repas:hover > .repas__select .fas{
   transform: rotate(-360deg);
-  transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
+  animation-duration: 3s;
+  transition: 3s;
+ /* transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;*/
 }
 
-@keyframes exemple {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+
 .delais1{
   animation-name: transition;
   animation-duration: 1s;
@@ -278,6 +272,9 @@ background-color: #99E2D0;
     justify-content: center;
     align-items: center;
     background-color: #99E2D0;
+    animation-duration: 2s;
+    transition: width 0.2s ease-in-out;
+  
 }
 
 
